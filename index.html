@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=11' />
+    <title>Docbox</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='css/base.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/railscasts.css' rel='stylesheet' />
+  </head>
+  <body>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="1627399214"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#3-rivers-wet-weather-geodata-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3 Rivers Wet Weather Geo/Data API</a><div class="small pad0x quiet space-top1" data-reactid="8">Resources</div><a href="#teragon-rainfall-dataset-api-10" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Teragon Rainfall Dataset API 1.0</a></div></div><div class="space-left16" data-reactid="10"><div class="" data-reactid="11"><div class="clearfix" data-reactid="12"><div data-title="3 Rivers Wet Weather Geo/Data API" class="keyline-top section contain clearfix " data-reactid="13"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="14"><h2 id="3-rivers-wet-weather-geodata-api">3 Rivers Wet Weather Geo/Data API</h2>
+<p>The 3RWW Geo/Data API provides a central location for documenting API access to 3RWW's various data and processing resources.</p>
+</div></div><div data-title="Teragon Rainfall Dataset API 1.0" class="keyline-top section contain clearfix " data-reactid="15"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="16"><h2 id="teragon-rainfall-dataset-api-10">Teragon Rainfall Dataset API 1.0</h2>
+<p>The Teragon Rainfall Dataset API provides access to the <em>historic</em> rainfall data shown on 3RWW's <a href="http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data">Calibrated Radar Rainfall website</a>. This data has been QAQC'd by <a href="http://www.vieuxinc.com/">Vieux Associates</a>.</p>
+<p>This API speciﬁcation allows access to the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are <em>two</em> RPC calls that allow access to each respective dataset.</p>
+</div></div><div data-title="Get Calibrated Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="17"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="18"><h3 id="get-calibrated-radar-rainfall-data">Get Calibrated Radar Rainfall Data</h3>
+<p>Get calibrated "pixel" virtual rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pixels</code></td>
+<td>semicolon-separated list of pixel tuples in the format "x,y" - for example: <code>"135,142;135,143;135,144"</code>. Please refer to the maps contained on the website to ﬁnd exact pixel coordinates.</td>
+</tr>
+<tr>
+<td><code>startyear</code></td>
+<td>numerical quantity in the range [2000-2030]</td>
+</tr>
+<tr>
+<td><code>startmonth</code></td>
+<td>numerical quantity in the range [1-12]</td>
+</tr>
+<tr>
+<td><code>startday</code></td>
+<td>numerical quantity in the range [1-31]</td>
+</tr>
+<tr>
+<td><code>starthour</code></td>
+<td>numerical quantity in the range [0-23]</td>
+</tr>
+<tr>
+<td><code>endyear</code></td>
+<td>numerical quantity in the range [2000-2030]</td>
+</tr>
+<tr>
+<td><code>endmonth</code></td>
+<td>numerical quantity in the range [1-12]</td>
+</tr>
+<tr>
+<td><code>endday</code></td>
+<td>numerical quantity in the range [1-31]</td>
+</tr>
+<tr>
+<td><code>endhour</code></td>
+<td>numerical quantity in the range [0-23]</td>
+</tr>
+<tr>
+<td><code>interval</code></td>
+<td>(optional) may be speciﬁed as <code>Hourly</code> or <code>Daily</code> for summary output. Absence of the parameter or any other speciﬁed parameter value will default to the 15-minute individual output</td>
+</tr>
+<tr>
+<td><code>zeroﬁll</code></td>
+<td>(optional) a value of <code>yes</code> will cause all rows to be included (normally rows that contain zeros for all datapoints are omitted)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="19"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.pixel</div>
+    </div>
+<h4 id="example-request">Example request</h4>
+<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d <span class="hljs-string">"pixels=135,142;135,143;135,144"</span> http://web.3riverswetweather.org/trp:API.pixel</pre>
+<h4 id="example-response">Example response</h4>
+<pre class='hljs'>Timestamp,135-142,,135-143,,135-144,
+2004/09/17 03:00:00,0.0070,-,0.0080,-,0.0100,-
+2004/09/17 04:00:00,0.0460,-,0.0430,-,0.0510,-
+2004/09/17 05:00:00,0.0110,-,0.0110,-,0.0100,-
+2004/09/17 06:00:00,0.0570,-,0.0490,-,0.0480,-
+2004/09/17 07:00:00,0.1970,-,0.1510,-,0.1460,-
+2004/09/17 08:00:00,0.1170,-,0.1040,-,0.1140,-
+2004/09/17 09:00:00,0.1940,-,0.1790,-,0.1959,-
+2004/09/17 10:00:00,0.4080,-,0.3689,-,0.3710,-
+2004/09/17 11:00:00,0.2880,-,0.4470,-,0.4020,-
+2004/09/17 12:00:00,0.3380,-,0.5070,-,0.5828,-
+2004/09/17 13:00:00,0.9820,-,1.1480,-,1.8210,-
+2004/09/17 14:00:00,0.8500,-,0.8210,-,0.9450,-
+2004/09/17 15:00:00,0.8009,-,0.7909,-,0.7660,-
+2004/09/17 16:00:00,0.7270,-,0.7570,-,0.6430,-
+2004/09/17 17:00:00,0.3890,-,0.4010,-,0.3740,-
+2004/09/17 18:00:00,0.2380,-,0.2319,-,0.2250,-
+2004/09/17 19:00:00,0.2210,-,0.1969,-,0.1730,-
+2004/09/17 20:00:00,0.0880,-,0.0810,-,0.0720,-
+2004/09/17 21:00:00,0.2330,-,0.2269,-,0.2390,-
+2004/09/17 22:00:00,0.2850,-,0.2360,-,0.2730,-
+2004/09/17 23:00:00,0.3220,-,0.3169,-,0.3249,-
+TOTAL,6.7989,,7.0754,,7.7866,</pre>
+</div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h3 id="get-rain-gauge-data">Get Rain Gauge Data</h3>
+<p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gauges</code></td>
+<td>comma-separated list of gauge numbers in the range [1-34]. Please refer to the maps contained on the website to ﬁnd gauge IDs.</td>
+</tr>
+<tr>
+<td><code>startyear</code></td>
+<td>numerical quantity in the range [2000-2030]</td>
+</tr>
+<tr>
+<td><code>startmonth</code></td>
+<td>numerical quantity in the range [1-12]</td>
+</tr>
+<tr>
+<td><code>startday</code></td>
+<td>numerical quantity in the range [1-31]</td>
+</tr>
+<tr>
+<td><code>starthour</code></td>
+<td>numerical quantity in the range [0-23]</td>
+</tr>
+<tr>
+<td><code>endyear</code></td>
+<td>numerical quantity in the range [2000-2030]</td>
+</tr>
+<tr>
+<td><code>endmonth</code></td>
+<td>numerical quantity in the range [1-12]</td>
+</tr>
+<tr>
+<td><code>endday</code></td>
+<td>numerical quantity in the range [1-31]</td>
+</tr>
+<tr>
+<td><code>endhour</code></td>
+<td>numerical quantity in the range [0-23]</td>
+</tr>
+<tr>
+<td><code>interval</code></td>
+<td>(optional) may be speciﬁed as <code>Hourly</code> or <code>Daily</code> for summary output. Absence of the parameter or any other speciﬁed parameter value will default to the 15-minute individual output</td>
+</tr>
+<tr>
+<td><code>zeroﬁll</code></td>
+<td>(optional) a value of <code>yes</code> will cause all rows to be included (normally rows that contain zeros for all datapoints are omitted)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="22"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.raingauge</div>
+    </div>
+<h4 id="example-request-1">Example request</h4>
+<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d <span class="hljs-string">"gauges=1,2"</span> http://web.3riverswetweather.org/trp:API.raingauge</pre>
+<h4 id="example-response-1">Example response</h4>
+<pre class='hljs'>Timestamp,1,,2,
+2004/09/17 03:00:00,0.0000,-,0.0000,-
+2004/09/17 04:00:00,0.0200,-,0.0200,-
+2004/09/17 05:00:00,0.0200,-,0.0100,-
+2004/09/17 06:00:00,0.0200,-,0.0400,-
+2004/09/17 07:00:00,0.1200,-,0.1100,-
+2004/09/17 08:00:00,0.1000,-,0.1100,-
+2004/09/17 09:00:00,0.1200,-,0.1300,-
+2004/09/17 10:00:00,0.3000,-,0.3000,-
+2004/09/17 11:00:00,0.3500,-,0.3300,-
+2004/09/17 12:00:00,0.5000,-,0.5500,-
+2004/09/17 13:00:00,1.0300,-,0.8900,-
+2004/09/17 14:00:00,1.0200,-,0.9500,-
+2004/09/17 15:00:00,0.6600,-,0.6700,-
+2004/09/17 16:00:00,0.5100,-,0.6200,-
+2004/09/17 17:00:00,0.2700,-,0.3100,-
+2004/09/17 18:00:00,0.1300,-,0.1500,-
+2004/09/17 19:00:00,0.1400,-,0.1300,-
+2004/09/17 20:00:00,0.0700,-,0.0600,-
+2004/09/17 21:00:00,0.1000,-,0.0700,-
+2004/09/17 22:00:00,0.2300,-,0.2700,-
+2004/09/17 23:00:00,0.1600,-,0.1500,-
+TOTAL,5.8700,,5.8700,</pre>
+</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="23"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="24"><div class="space-right1 small quiet inline" data-reactid="25">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="26"><a class="strong active" data-reactid="27">cURL</a><a class="strong " data-reactid="28">Python</a></div><div class="fr pad0" data-reactid="29"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="30"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="31"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-blue" data-reactid="32"></a><div class="strong small pad0
+          
+          space-left4 line-height15" data-reactid="33">3RWW Geo/Data API Docs</div></div></div></div><!--STOP-->
+    <script src='bundle.js'></script>
+  </body>
+</html>
