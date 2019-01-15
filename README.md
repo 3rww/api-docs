@@ -1,3 +1,11 @@
+# 3RWW API Documentation
+
+This contains a central repository for documenting 3RWW's various geo/data resource and processing API.
+
+It's built with DocBox and hosted as a static site on GitHub Pages. See below for instructions on using DocBox to write this documentation.
+
+---
+
 <p align='center'><img src='https://c1.staticflickr.com/5/4786/26869034328_9ff90bf2ac.jpg' width=250>
 	<br />docbox</p>
 	
