@@ -1,8 +1,10 @@
-## Teragon Rainfall Dataset API 1.0
+## Rainfall API
 
-The Teragon Rainfall Dataset API provides access to the *historic* rainfall data shown on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data). This data has been QAQC'd by [Vieux Associates](http://www.vieuxinc.com/).
+3 Rivers Wet Weather, with support from [Vieux Associates](http://www.vieuxinc.com/), uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data).
 
-This API speciﬁcation allows access to the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are *two* RPC calls that allow access to each respective dataset.
+The *Teragon Rainfall Dataset API 1.0* provides direct access to the *"historic"* rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.
+
+*Note: For an in-depth walk-through for using this API, see this [notebook on GitHub](https://github.com/3rww/notebooks/blob/master/rainfall/Getting%20Data%20(Teragon).ipynb) (or with [NBViewer](https://nbviewer.jupyter.org/github/3rww/notebooks/blob/master/rainfall/Getting%20Data%20%28Teragon%29.ipynb))*
 
 ### Get Calibrated Radar Rainfall Data
 
