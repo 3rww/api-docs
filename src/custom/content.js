@@ -13,4 +13,5 @@ module.exports =
   '# Introduction\n' +
   fs.readFileSync('./content/introduction.md', 'utf8') + '\n' +
   '# Resources\n' +
-  fs.readFileSync('./content/rainfall-teragon.md', 'utf8') + '\n';
+  fs.readFileSync('./content/rainfall-teragon.md', 'utf8') + '\n' +
+  fs.readFileSync('./content/sewer-atlas-trace.md', 'utf8') + '\n';
