@@ -10,14 +10,14 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="1925101550"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#3rww-geodata-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Geo/Data API</a><div class="small pad0x quiet space-top1" data-reactid="8">Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Network Trace API</a></div></div><div class="space-left16" data-reactid="11"><div class="" data-reactid="12"><div class="clearfix" data-reactid="13"><div data-title="3RWW Geo/Data API" class="keyline-top section contain clearfix " data-reactid="14"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="15"><h2 id="3rww-geodata-api">3RWW Geo/Data API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="1145659171"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#3rww-geodata-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Geo/Data API</a><div class="small pad0x quiet space-top1" data-reactid="8">Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Network Trace API</a><a href="#delineation-api" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Delineation API</a><a href="#landcover-api" class="line-height15 pad0x pad00y quiet block " data-reactid="12">Landcover API</a></div></div><div class="space-left16" data-reactid="13"><div class="" data-reactid="14"><div class="clearfix" data-reactid="15"><div data-title="3RWW Geo/Data API" class="keyline-top section contain clearfix " data-reactid="16"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="17"><h2 id="3rww-geodata-api">3RWW Geo/Data API</h2>
 <p>The <em>3RWW Geo/Data API</em> provides a central location for documenting API access to the data and processing resources provided by <a href="https://www.3riverswetweather.org">3 Rivers Wet Weather</a>.</p>
 <p>This site should be considered <em>beta</em>; the underlying API specs may change.</p>
-</div></div><div data-title="Rainfall API" class="keyline-top section contain clearfix " data-reactid="16"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="17"><h2 id="rainfall-api">Rainfall API</h2>
+</div></div><div data-title="Rainfall API" class="keyline-top section contain clearfix " data-reactid="18"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="19"><h2 id="rainfall-api">Rainfall API</h2>
 <p>3 Rivers Wet Weather, with support from <a href="http://www.vieuxinc.com/">Vieux Associates</a>, uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's <a href="http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data">Calibrated Radar Rainfall website</a>.</p>
 <p>The <em>Teragon Rainfall Dataset API 1.0</em> provides direct access to the <em>"historic"</em> rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.</p>
 <p><em>Note: For an in-depth walk-through for using this API, see this <a href="https://github.com/3rww/notebooks/blob/master/rainfall/Getting%20Data%20(Teragon).ipynb">notebook on GitHub</a> (or with <a href="https://nbviewer.jupyter.org/github/3rww/notebooks/blob/master/rainfall/Getting%20Data%20%28Teragon%29.ipynb">NBViewer</a>)</em></p>
-</div></div><div data-title="Get Calibrated Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="18"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="19"><h3 id="get-calibrated-radar-rainfall-data">Get Calibrated Radar Rainfall Data</h3>
+</div></div><div data-title="Get Calibrated Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h3 id="get-calibrated-radar-rainfall-data">Get Calibrated Radar Rainfall Data</h3>
 <p>Get calibrated "pixel" virtual rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
 <table>
 <thead>
@@ -73,7 +73,7 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="20"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="22"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.pixel</div>
     </div>
@@ -103,7 +103,7 @@
 2004/09/17 22:00:00,0.2850,-,0.2360,-,0.2730,-
 2004/09/17 23:00:00,0.3220,-,0.3169,-,0.3249,-
 TOTAL,6.7989,,7.0754,,7.7866,</pre>
-</div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="21"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="22"><h3 id="get-rain-gauge-data">Get Rain Gauge Data</h3>
+</div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="23"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="24"><h3 id="get-rain-gauge-data">Get Rain Gauge Data</h3>
 <p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
 <table>
 <thead>
@@ -159,7 +159,7 @@ TOTAL,6.7989,,7.0754,,7.7866,</pre>
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="23"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="25"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.raingauge</div>
     </div>
@@ -189,30 +189,36 @@ TOTAL,6.7989,,7.0754,,7.7866,</pre>
 2004/09/17 22:00:00,0.2300,-,0.2700,-
 2004/09/17 23:00:00,0.1600,-,0.1500,-
 TOTAL,5.8700,,5.8700,</pre>
-</div></div><div data-title="Network Trace API" class="keyline-top section contain clearfix " data-reactid="24"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="25"><h2 id="network-trace-api">Network Trace API</h2>
+</div></div><div data-title="Network Trace API" class="keyline-top section contain clearfix " data-reactid="26"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="27"><h2 id="network-trace-api">Network Trace API</h2>
 <p>The Network Trace API provides <em>straightforward</em> access to the geoprocessing service behind the network trace tool used by the <a href="http://mds.3riverswetweather.org/atlas/rsi">3RWW Sewer Atlas</a> and 3RWW's <a href="https://flush-it.civicmapper.com/">Flush-It!</a> map. This API provides a way to run a network trace without having to deal with the underlying ArcGIS REST API; it provides a quick path to data that is ready for system modeling (e.g., SWMM), without the need for post-processing.</p>
 <p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
-</div></div><div data-title="Flush-It Trace" class="keyline-top section contain clearfix " data-reactid="26"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="27"><h3 id="flush-it-trace">Flush-It Trace</h3>
+</div></div><div data-title="Flush-It Trace" class="keyline-top section contain clearfix " data-reactid="28"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="29"><h3 id="flush-it-trace">Flush-It Trace</h3>
 <p>This trace endpoint provides non-spatial results similar to those seen in 3RWW's <a href="https://flush-it.civicmapper.com/">Flush-It!</a> map.</p>
 <p>Using a Street Address or X/Y coordinates, get a summary of the sewer network downstream <em>and</em> upstream. Summary results include:</p>
 <ul>
 <li><strong>downstream</strong>: distance, estimated time to plant, municipalities and neighborhoods</li>
 <li><strong>upstream</strong>: distance, inch-miles, municipalities and neighborhoods</li>
 </ul>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="28"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="30"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/networktrace/light</div>
     </div>
-</div></div><div data-title="Sewer Atlas Trace" class="keyline-top section contain clearfix " data-reactid="29"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="30"><h3 id="sewer-atlas-trace">Sewer Atlas Trace</h3>
+</div></div><div data-title="Sewer Atlas Trace" class="keyline-top section contain clearfix " data-reactid="31"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="32"><h3 id="sewer-atlas-trace">Sewer Atlas Trace</h3>
 <p>Using a Street Address, X/Y coordinates, or a Structure ID from <code>struct_id</code> field of <code>sewerstormwater_nodes</code> feature service on the Sewer Atlas, get a summary of the sewer network downstream <em>and</em> upstream (same as Network Trace <em>Light</em>), as well as the complete geometry of the trace as <code>geojson</code> with pipe and structure attributes key to modeling.</p>
 <p>The <em>Sewer Atlas</em> endpoint requires that 3RWW MDS credentials be submitted with the request; as such this endpoint only accepts <code>POST</code> requests.</p>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="31"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="33"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/networktrace/heavy</div>
     </div>
-</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="32"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="33"><div class="space-right1 small quiet inline" data-reactid="34">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="35"><a class="strong active" data-reactid="36">cURL</a><a class="strong " data-reactid="37">Python</a></div><div class="fr pad0" data-reactid="38"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="39"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="40"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 trww" data-reactid="41"></a><div class="strong small pad0
+</div></div><div data-title="Delineation API" class="keyline-top section contain clearfix " data-reactid="34"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="35"><h2 id="delineation-api">Delineation API</h2>
+<p>The Delineation API provides surficial delineation of drainage basins, with coverage for Allegheny County.</p>
+<p><em>Note: This API is currently under development.</em></p>
+</div></div><div data-title="Landcover API" class="keyline-top section contain clearfix " data-reactid="36"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="37"><h2 id="landcover-api">Landcover API</h2>
+<p>The Landcover API provides access to landcover characterizations for user-provided areas in Allegheny County—e.g., pervious, impervious. Use in combination with the <em>Delineation API</em> to create basin characterizations.</p>
+<p><em>Note: This API is currently under development.</em></p>
+</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="38"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="39"><div class="space-right1 small quiet inline" data-reactid="40">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="41"><a class="strong active" data-reactid="42">cURL</a><a class="strong " data-reactid="43">Python</a></div><div class="fr pad0" data-reactid="44"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="45"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="46"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 trww" data-reactid="47"></a><div class="strong small pad0
           
-          space-left4 line-height15" data-reactid="42">3RWW Geo/Data API Docs</div></div></div></div><!--STOP-->
+          space-left4 line-height15" data-reactid="48">3RWW Geo/Data API Docs</div></div></div></div><!--STOP-->
     <script src='bundle.js'></script>
   </body>
 </html>
