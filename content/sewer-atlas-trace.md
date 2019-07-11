@@ -6,15 +6,15 @@ The Network Trace API provides *straightforward* access to the geoprocessing ser
 
 ### Flush-It Trace
 
-This trace endpoint provides non-spatial results similar to those seen in 3RWW's [Flush-It!](https://flush-it.civicmapper.com/) map.
+This trace endpoint provides summary results similar to those seen in 3RWW's [Flush-It!](https://flush-it.civicmapper.com/) map.
 
 Using a Street Address or X/Y coordinates, get a summary of the sewer network downstream *and* upstream. Summary results include:
 
-* **downstream**: distance, estimated time to plant, municipalities and neighborhoods
+* **downstream**: distance, estimated time to plant, municipalities and neighborhoods, and the path of the downstream trace.
 * **upstream**: distance, inch-miles, municipalities and neighborhoods
 
 ```endpoint
-GET http://api.3riverswetweather.org/networktrace/light
+GET http://api.3riverswetweather.org/api/v0/networktrace/light
 ```
 
 ### Sewer Atlas Trace
@@ -24,5 +24,5 @@ Using a Street Address, X/Y coordinates, or a Structure ID from `struct_id` fiel
 The *Sewer Atlas* endpoint requires that 3RWW MDS credentials be submitted with the request; as such this endpoint only accepts `POST` requests.
 
 ```endpoint
-POST http://api.3riverswetweather.org/networktrace/heavy
+POST http://api.3riverswetweather.org/api/v0/networktrace/heavy
 ```

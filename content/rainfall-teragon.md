@@ -1,4 +1,4 @@
-## Rainfall API
+## Rainfall API (via Teragon)
 
 3 Rivers Wet Weather, with support from [Vieux Associates](http://www.vieuxinc.com/), uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data).
 

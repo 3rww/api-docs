@@ -5,8 +5,8 @@
  * media queries.
  */
 module.exports.brandNames = {
-  desktop: '3RWW Geo/Data API Docs',
-  tablet: '3RWW Geo/Data API Docs',
+  desktop: '3RWW Rainways API Docs',
+  tablet: 'Rainways API Docs',
   mobile: '3RWW API Docs'
 };
 

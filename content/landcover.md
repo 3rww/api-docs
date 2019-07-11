@@ -2,4 +2,14 @@
 
 The Landcover API provides access to landcover characterizations for user-provided areas in Allegheny County&mdash;e.g., pervious, impervious. Use in combination with the *Delineation API* to create basin characterizations.
 
-*Note: This API is currently under development.*
+### Get Landcover summary statistics
+
+Landcover summary statistics, including percent impervious/pervious (TBC)
+
+Data | Source | Description | Get
+---|---|---|---
+2010 Urban Tree Canopy | Allegheny County | ... | [link](#)
+
+```endpoint
+POST http://api.3riverswetweather.org/api/v0/landcover/summary
+```

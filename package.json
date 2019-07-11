@@ -45,6 +45,7 @@
     "highlight.js": "^9.2.0",
     "isomorphic-fetch": "^2.2.0",
     "lodash.debounce": "^4.0.3",
+    "loose-envify": "^1.4.0",
     "minifyify": "^7.1.0",
     "prop-types": "15.7.1",
     "react": "^15.6.2",
