@@ -10,7 +10,7 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="1520019232"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Overview</div><a href="#3rww-rainways-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Rainways API</a><div class="small pad0x quiet space-top1" data-reactid="8">Data Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#rainfall-api-via-teragon" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Rainfall API (via Teragon)</a><a href="#terrain-api" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Terrain API</a><a href="#landcover-api" class="line-height15 pad0x pad00y quiet block " data-reactid="12">Landcover API</a><a href="#sub-surface-api" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Sub-Surface API</a><div class="small pad0x quiet space-top1" data-reactid="14">Analysis Resources</div><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Network Trace API</a><a href="#delineation-api" class="line-height15 pad0x pad00y quiet block " data-reactid="16">Delineation API</a></div></div><div class="space-left16" data-reactid="17"><div class="" data-reactid="18"><div class="clearfix" data-reactid="19"><div data-title="3RWW Rainways API" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h2 id="3rww-rainways-api">3RWW Rainways API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="2062352026"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Overview</div><a href="#3rww-rainways-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Rainways API</a><div class="small pad0x quiet space-top1" data-reactid="8">Data Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#rainfall-api-via-teragon" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Rainfall API (via Teragon)</a><a href="#terrain-api" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Terrain API</a><a href="#landcover-api" class="line-height15 pad0x pad00y quiet block " data-reactid="12">Landcover API</a><a href="#sub-surface-api" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Sub-Surface API</a><div class="small pad0x quiet space-top1" data-reactid="14">Analysis Resources</div><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Network Trace API</a><a href="#delineation-api" class="line-height15 pad0x pad00y quiet block " data-reactid="16">Delineation API</a></div></div><div class="space-left16" data-reactid="17"><div class="" data-reactid="18"><div class="clearfix" data-reactid="19"><div data-title="3RWW Rainways API" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h2 id="3rww-rainways-api">3RWW Rainways API</h2>
 <p>The <em>3RWW Rainways API</em> provides a central location for documenting access to the data and processing resources from <a href="https://www.3riverswetweather.org">3 Rivers Wet Weather</a> and other organizations that are useful for sewer and stormwater modeling in Allegheny County, PA.</p>
 <p>The goal of the Rainways API is to provide a shortcut around a lot of the otherwise tedious work of downloading and prepping the environmental, infrastructure, and geophysical data used in sewer and stormwater modeling. It doesn't represent a new database or central repository, only a quicker and more direct way to access existing datastores that are relevant to this kind of work. To that end, it is designed to:</p>
 <ul>
@@ -22,26 +22,12 @@
 <p><strong>Data Resources</strong>: These endpoints provide ways to get to geographic and temporal data for points or areas of interest quickly.</p>
 <p><strong>Analysis Resources</strong>: These endpoints derive new information from data resources through further geospatial analysis</p>
 </div></div><div data-title="Rainfall API" class="keyline-top section contain clearfix " data-reactid="22"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="23"><h2 id="rainfall-api">Rainfall API</h2>
+<p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
 <p>3 Rivers Wet Weather, with support from <a href="http://www.vieuxinc.com/">Vieux Associates</a>, uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's <a href="http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data">Calibrated Radar Rainfall website</a>.</p>
 <p>The <em>3RWW Rainfall API</em> provides seamless access to current and <em>"historic"</em> rainfall data (older than 60 days from today) for the physical rain gauge data and calibrated pixel virtual rain gauge data (i.e., gauge-adjusted radar rainfall data, or <em>GARRD</em>).</p>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Source</th>
-<th>Description</th>
-<th>Get</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Rainfall</td>
-<td>3RWW &#x26; Vieux Associates</td>
-<td>...</td>
-<td>Get it here!</td>
-</tr>
-</tbody>
-</table>
+<!-- Data | Source | Description | Get
+---|---|---|---
+Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 </div></div><div data-title="Get Gauage Adjusted Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="24"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="25"><h3 id="get-gauage-adjusted-radar-rainfall-data">Get Gauage Adjusted Radar Rainfall Data</h3>
 <p>Get rainfall totals for a point or area of interest, at a point in time or over time. This data comes from from 3RWW's virtual rain gauge system.</p>
 <p>The data is by default returned as <code>JSON</code>. optionally return <code>GeoJSON</code>, a <code>CSV</code> table, or a <code>MD</code> (markdown) table.</p>
@@ -85,7 +71,7 @@
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="26"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/rainfall/garrd</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainfall/v2/pixel</div>
     </div>
 </div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="27"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="28"><h3 id="get-rain-gauge-data">Get Rain Gauge Data</h3>
 <p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
@@ -133,18 +119,56 @@
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="29"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/rainfall/gauge</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainfall/v2/raingauge</div>
     </div>
 </div></div><div data-title="Rainfall API (via Teragon)" class="keyline-top section contain clearfix " data-reactid="30"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="31"><h2 id="rainfall-api-via-teragon">Rainfall API (via Teragon)</h2>
 <p>3 Rivers Wet Weather, with support from <a href="http://www.vieuxinc.com/">Vieux Associates</a>, uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's <a href="http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data">Calibrated Radar Rainfall website</a>.</p>
 <p>The <em>Teragon Rainfall Dataset API 1.0</em> provides direct access to the <em>"historic"</em> rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.</p>
-<p><em>Note: For an in-depth walk-through for using this API, see this <a href="https://github.com/3rww/notebooks/blob/master/rainfall/Getting%20Data%20(Teragon).ipynb">notebook on GitHub</a> (or with <a href="https://nbviewer.jupyter.org/github/3rww/notebooks/blob/master/rainfall/Getting%20Data%20%28Teragon%29.ipynb">NBViewer</a>)</em></p>
+<p><em>Note: For a walk-through for using this API, see this <a href="https://github.com/3rww/notebooks/blob/master/rainfall/Getting%20Data%20(Teragon).ipynb">notebook on GitHub</a> (or with <a href="https://nbviewer.jupyter.org/github/3rww/notebooks/blob/master/rainfall/Getting%20Data%20%28Teragon%29.ipynb">NBViewer</a>)</em></p>
 </div></div><div data-title="Get Calibrated Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="32"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="33"><h3 id="get-calibrated-radar-rainfall-data">Get Calibrated Radar Rainfall Data</h3>
-<p>Get calibrated "pixel" virtual rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
+<p>Get virtual rain gauge (gauge-adjusted / calibrated radar) data. </p>
+<p>The results are returned as plain text, formated as a <code>csv</code> table (MIME-type <code>text\csv</code>').</p>
+<p>In addition to rainfall values (as inches), each virtual gauge includes a metadata column which indicates the source for the data. This column includes the codes:</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Metadata Column Source Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Calibrated radar rainfall data</td>
+</tr>
+<tr>
+<td>G-0</td>
+<td>No gauge or calibrated radar rainfall data is available, but not for the reasons given for N/D below</td>
+</tr>
+<tr>
+<td>G-1</td>
+<td>Derived from inverse distance squared weighting based on one rain gauge</td>
+</tr>
+<tr>
+<td>G-2</td>
+<td>Derived from inverse distance squared weighting based on two rain gauges</td>
+</tr>
+<tr>
+<td>G-3</td>
+<td>Derived from inverse distance squared weighting based on three rain gauges</td>
+</tr>
+<tr>
+<td>N/D</td>
+<td>No data was collected for this data point. This may be because no data was collected at the time or the pixel may be outside of the data collection boundary.</td>
+</tr>
+</tbody>
+</table>
+<p>(Note that no metadata is provided for hourly or daily roll-ups, only 15-minute interval observations.)</p>
+<p>Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.</p>
+<table>
+<thead>
+<tr>
+<th>Request Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -167,7 +191,7 @@
 </tr>
 <tr>
 <td><code>starthour</code></td>
-<td>numerical quantity in the range [0-23]</td>
+<td>(optional) numerical quantity in the range [0-23]</td>
 </tr>
 <tr>
 <td><code>endyear</code></td>
@@ -183,15 +207,11 @@
 </tr>
 <tr>
 <td><code>endhour</code></td>
-<td>numerical quantity in the range [0-23]</td>
+<td>(optional) numerical quantity in the range [0-23]</td>
 </tr>
 <tr>
 <td><code>interval</code></td>
 <td>(optional) may be speciﬁed as <code>Hourly</code> or <code>Daily</code> for summary output. Absence of the parameter or any other speciﬁed parameter value will default to the 15-minute individual output</td>
-</tr>
-<tr>
-<td><code>zeroﬁll</code></td>
-<td>(optional) a value of <code>yes</code> will cause all rows to be included (normally rows that contain zeros for all datapoints are omitted)</td>
 </tr>
 </tbody>
 </table>
@@ -200,37 +220,36 @@
       <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.pixel</div>
     </div>
 <h4 id="example-request">Example request</h4>
-<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d <span class="hljs-string">"pixels=135,142;135,143;135,144"</span> http://web.3riverswetweather.org/trp:API.pixel</pre>
+<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d pixels=<span class="hljs-string">"135,142;135,143;135,144"</span> http://web.3riverswetweather.org/trp:API.pixel</pre>
 <h4 id="example-response">Example response</h4>
-<pre class='hljs'>Timestamp,135-142,,135-143,,135-144,
-2004/09/17 03:00:00,0.0070,-,0.0080,-,0.0100,-
-2004/09/17 04:00:00,0.0460,-,0.0430,-,0.0510,-
-2004/09/17 05:00:00,0.0110,-,0.0110,-,0.0100,-
-2004/09/17 06:00:00,0.0570,-,0.0490,-,0.0480,-
-2004/09/17 07:00:00,0.1970,-,0.1510,-,0.1460,-
-2004/09/17 08:00:00,0.1170,-,0.1040,-,0.1140,-
-2004/09/17 09:00:00,0.1940,-,0.1790,-,0.1959,-
-2004/09/17 10:00:00,0.4080,-,0.3689,-,0.3710,-
-2004/09/17 11:00:00,0.2880,-,0.4470,-,0.4020,-
-2004/09/17 12:00:00,0.3380,-,0.5070,-,0.5828,-
-2004/09/17 13:00:00,0.9820,-,1.1480,-,1.8210,-
-2004/09/17 14:00:00,0.8500,-,0.8210,-,0.9450,-
-2004/09/17 15:00:00,0.8009,-,0.7909,-,0.7660,-
-2004/09/17 16:00:00,0.7270,-,0.7570,-,0.6430,-
-2004/09/17 17:00:00,0.3890,-,0.4010,-,0.3740,-
-2004/09/17 18:00:00,0.2380,-,0.2319,-,0.2250,-
-2004/09/17 19:00:00,0.2210,-,0.1969,-,0.1730,-
-2004/09/17 20:00:00,0.0880,-,0.0810,-,0.0720,-
-2004/09/17 21:00:00,0.2330,-,0.2269,-,0.2390,-
-2004/09/17 22:00:00,0.2850,-,0.2360,-,0.2730,-
-2004/09/17 23:00:00,0.3220,-,0.3169,-,0.3249,-
-TOTAL,6.7989,,7.0754,,7.7866,</pre>
+<pre class='hljs'>Timestamp,135142,135142-src,135143,135143-src,135144,135144-src
+2004-09-17T03:00:00,0.0070,-,0.0080,-,0.0100,-
+2004-09-17T04:00:00,0.0460,-,0.0430,-,0.0510,-
+2004-09-17T05:00:00,0.0110,-,0.0110,-,0.0100,-
+2004-09-17T06:00:00,0.0570,-,0.0490,-,0.0480,-
+2004-09-17T07:00:00,0.1970,-,0.1510,-,0.1460,-
+2004-09-17T08:00:00,0.1170,-,0.1040,-,0.1140,-
+2004-09-17T09:00:00,0.1940,-,0.1790,-,0.1959,-
+2004-09-17T10:00:00,0.4080,-,0.3689,-,0.3710,-
+2004-09-17T11:00:00,0.2880,-,0.4470,-,0.4020,-
+2004-09-17T12:00:00,0.3380,-,0.5070,-,0.5828,-
+2004-09-17T13:00:00,0.9820,-,1.1480,-,1.8210,-
+2004-09-17T14:00:00,0.8500,-,0.8210,-,0.9450,-
+2004-09-17T15:00:00,0.8009,-,0.7909,-,0.7660,-
+2004-09-17T16:00:00,0.7270,-,0.7570,-,0.6430,-
+2004-09-17T17:00:00,0.3890,-,0.4010,-,0.3740,-
+2004-09-17T18:00:00,0.2380,-,0.2319,-,0.2250,-
+2004-09-17T19:00:00,0.2210,-,0.1969,-,0.1730,-
+2004-09-17T20:00:00,0.0880,-,0.0810,-,0.0720,-
+2004-09-17T21:00:00,0.2330,-,0.2269,-,0.2390,-
+2004-09-17T22:00:00,0.2850,-,0.2360,-,0.2730,-
+2004-09-17T23:00:00,0.3220,-,0.3169,-,0.3249,-</pre>
 </div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="35"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="36"><h3 id="get-rain-gauge-data-1">Get Rain Gauge Data</h3>
-<p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code>.</p>
+<p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code> (MIME-type <code>text\csv</code>'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Request Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -275,10 +294,6 @@ TOTAL,6.7989,,7.0754,,7.7866,</pre>
 <td><code>interval</code></td>
 <td>(optional) may be speciﬁed as <code>Hourly</code> or <code>Daily</code> for summary output. Absence of the parameter or any other speciﬁed parameter value will default to the 15-minute individual output</td>
 </tr>
-<tr>
-<td><code>zeroﬁll</code></td>
-<td>(optional) a value of <code>yes</code> will cause all rows to be included (normally rows that contain zeros for all datapoints are omitted)</td>
-</tr>
 </tbody>
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="37"><div class='endpoint dark fill-dark round '>
@@ -286,46 +301,47 @@ TOTAL,6.7989,,7.0754,,7.7866,</pre>
       <div class='pad0 code small endpoint-url'>http://web.3riverswetweather.org/trp:API.raingauge</div>
     </div>
 <h4 id="example-request-1">Example request</h4>
-<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d <span class="hljs-string">"gauges=1,2"</span> http://web.3riverswetweather.org/trp:API.raingauge</pre>
+<pre class='hljs'>curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d gauges=<span class="hljs-string">"1,2"</span> http://web.3riverswetweather.org/trp:API.raingauge</pre>
 <h4 id="example-response-1">Example response</h4>
-<pre class='hljs'>Timestamp,1,,2,
-2004/09/17 03:00:00,0.0000,-,0.0000,-
-2004/09/17 04:00:00,0.0200,-,0.0200,-
-2004/09/17 05:00:00,0.0200,-,0.0100,-
-2004/09/17 06:00:00,0.0200,-,0.0400,-
-2004/09/17 07:00:00,0.1200,-,0.1100,-
-2004/09/17 08:00:00,0.1000,-,0.1100,-
-2004/09/17 09:00:00,0.1200,-,0.1300,-
-2004/09/17 10:00:00,0.3000,-,0.3000,-
-2004/09/17 11:00:00,0.3500,-,0.3300,-
-2004/09/17 12:00:00,0.5000,-,0.5500,-
-2004/09/17 13:00:00,1.0300,-,0.8900,-
-2004/09/17 14:00:00,1.0200,-,0.9500,-
-2004/09/17 15:00:00,0.6600,-,0.6700,-
-2004/09/17 16:00:00,0.5100,-,0.6200,-
-2004/09/17 17:00:00,0.2700,-,0.3100,-
-2004/09/17 18:00:00,0.1300,-,0.1500,-
-2004/09/17 19:00:00,0.1400,-,0.1300,-
-2004/09/17 20:00:00,0.0700,-,0.0600,-
-2004/09/17 21:00:00,0.1000,-,0.0700,-
-2004/09/17 22:00:00,0.2300,-,0.2700,-
-2004/09/17 23:00:00,0.1600,-,0.1500,-
-TOTAL,5.8700,,5.8700,</pre>
+<pre class='hljs'>Timestamp,1,1-src,2,2-src
+2004-09-17T03:00:00,0.0000,-,0.0000,-
+2004-09-17T04:00:00,0.0200,-,0.0200,-
+2004-09-17T05:00:00,0.0200,-,0.0100,-
+2004-09-17T06:00:00,0.0200,-,0.0400,-
+2004-09-17T07:00:00,0.1200,-,0.1100,-
+2004-09-17T08:00:00,0.1000,-,0.1100,-
+2004-09-17T09:00:00,0.1200,-,0.1300,-
+2004-09-17T10:00:00,0.3000,-,0.3000,-
+2004-09-17T11:00:00,0.3500,-,0.3300,-
+2004-09-17T12:00:00,0.5000,-,0.5500,-
+2004-09-17T13:00:00,1.0300,-,0.8900,-
+2004-09-17T14:00:00,1.0200,-,0.9500,-
+2004-09-17T15:00:00,0.6600,-,0.6700,-
+2004-09-17T16:00:00,0.5100,-,0.6200,-
+2004-09-17T17:00:00,0.2700,-,0.3100,-
+2004-09-17T18:00:00,0.1300,-,0.1500,-
+2004-09-17T19:00:00,0.1400,-,0.1300,-
+2004-09-17T20:00:00,0.0700,-,0.0600,-
+2004-09-17T21:00:00,0.1000,-,0.0700,-
+2004-09-17T22:00:00,0.2300,-,0.2700,-
+2004-09-17T23:00:00,0.1600,-,0.1500,-</pre>
 </div></div><div data-title="Terrain API" class="keyline-top section contain clearfix " data-reactid="38"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="39"><h2 id="terrain-api">Terrain API</h2>
+<p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
 <p>The Terrain API provides summary statistics a high definition, hydrologically-corrected Digitial Elevation Model (DEM) for Allegheny County.</p>
 </div></div><div data-title="Get Topographic Summary" class="keyline-top section contain clearfix " data-reactid="40"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="41"><h3 id="get-topographic-summary">Get Topographic Summary</h3>
 <p>Elevation and slope statistics (TBD)</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="42"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/terrain/topo</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/terrain/topo</div>
     </div>
 </div></div><div data-title="Get Hydrological Summary" class="keyline-top section contain clearfix " data-reactid="43"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="44"><h3 id="get-hydrological-summary">Get Hydrological Summary</h3>
 <p>Surface flow direction and flow accumulation statistics (TBD)</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="45"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/terrain/hydro</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/terrain/hydro</div>
     </div>
 </div></div><div data-title="Landcover API" class="keyline-top section contain clearfix " data-reactid="46"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="47"><h2 id="landcover-api">Landcover API</h2>
+<p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
 <p>The Landcover API provides access to landcover characterizations for user-provided areas in Allegheny County—e.g., pervious, impervious. Use in combination with the <em>Delineation API</em> to create basin characterizations.</p>
 </div></div><div data-title="Get Landcover summary statistics" class="keyline-top section contain clearfix " data-reactid="48"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="49"><h3 id="get-landcover-summary-statistics">Get Landcover summary statistics</h3>
 <p>Landcover summary statistics, including percent impervious/pervious (TBC)</p>
@@ -349,25 +365,26 @@ TOTAL,5.8700,,5.8700,</pre>
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="50"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/landcover/summary</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/landcover/summary</div>
     </div>
 </div></div><div data-title="Sub-Surface API" class="keyline-top section contain clearfix " data-reactid="51"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="52"><h2 id="sub-surface-api">Sub-Surface API</h2>
+<p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
 <p>The Sub-Surface API provides summary information about soils and geology for a point or area of interest.</p>
 </div></div><div data-title="Soils" class="keyline-top section contain clearfix " data-reactid="53"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="54"><h3 id="soils">Soils</h3>
 <p>Get a soil type and hydrological characteristic summary (TBD)</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="55"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/subsurface/soils</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/subsurface/soils</div>
     </div>
 </div></div><div data-title="Geology" class="keyline-top section contain clearfix " data-reactid="56"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="57"><h3 id="geology">Geology</h3>
 <p>(TBD)</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="58"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/subsurface/geology</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/subsurface/geology</div>
     </div>
 </div></div><div data-title="Network Trace API" class="keyline-top section contain clearfix " data-reactid="59"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="60"><h2 id="network-trace-api">Network Trace API</h2>
-<p>The Network Trace API provides <em>straightforward</em> access to the geoprocessing service behind the network trace tool used by the <a href="http://mds.3riverswetweather.org/atlas/rsi">3RWW Sewer Atlas</a> and 3RWW's <a href="https://flush-it.civicmapper.com/">Flush-It!</a> map. This API provides a way to run a network trace without having to deal with the underlying ArcGIS REST API; it provides a quick path to data that is ready for system modeling (e.g., SWMM), without the need for post-processing.</p>
 <p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
+<p>The Network Trace API provides <em>straightforward</em> access to the geoprocessing service behind the network trace tool used by the <a href="http://mds.3riverswetweather.org/atlas/rsi">3RWW Sewer Atlas</a> and 3RWW's <a href="https://flush-it.civicmapper.com/">Flush-It!</a> map. This API provides a way to run a network trace without having to deal with the underlying ArcGIS REST API; it provides a quick path to data that is ready for system modeling (e.g., SWMM), without the need for post-processing.</p>
 </div></div><div data-title="Flush-It Trace" class="keyline-top section contain clearfix " data-reactid="61"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="62"><h3 id="flush-it-trace">Flush-It Trace</h3>
 <p>This trace endpoint provides summary results similar to those seen in 3RWW's <a href="https://flush-it.civicmapper.com/">Flush-It!</a> map.</p>
 <p>Using a Street Address or X/Y coordinates, get a summary of the sewer network downstream <em>and</em> upstream. Summary results include:</p>
@@ -377,35 +394,36 @@ TOTAL,5.8700,,5.8700,</pre>
 </ul>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="63"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/networktrace/light</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/seweratlas/v0/networktrace/light</div>
     </div>
 </div></div><div data-title="Sewer Atlas Trace" class="keyline-top section contain clearfix " data-reactid="64"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="65"><h3 id="sewer-atlas-trace">Sewer Atlas Trace</h3>
 <p>Using a Street Address, X/Y coordinates, or a Structure ID from <code>struct_id</code> field of <code>sewerstormwater_nodes</code> feature service on the Sewer Atlas, get a summary of the sewer network downstream <em>and</em> upstream (same as Network Trace <em>Light</em>), as well as the complete geometry of the trace as <code>geojson</code> with pipe and structure attributes key to modeling.</p>
 <p>The <em>Sewer Atlas</em> endpoint requires that 3RWW MDS credentials be submitted with the request; as such this endpoint only accepts <code>POST</code> requests.</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="66"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/networktrace/heavy</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/seweratlas/v0/networktrace/heavy</div>
     </div>
 </div></div><div data-title="Delineation API" class="keyline-top section contain clearfix " data-reactid="67"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="68"><h2 id="delineation-api">Delineation API</h2>
+<p><em>Note: This API is currently under development; headings and addresses below represent planned endpoints.</em></p>
 <p>The Delineation API provides surficial delineation of drainage basins, with coverage for Allegheny County.</p>
 </div></div><div data-title="Delineate" class="keyline-top section contain clearfix " data-reactid="69"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="70"><h3 id="delineate">Delineate</h3>
 <p>Delineate the upstream contributing area from a point or area.</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="71"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/delineation/delineate</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/delineation/delineate</div>
     </div>
 </div></div><div data-title="Delineate and Cross-Tab" class="keyline-top section contain clearfix " data-reactid="72"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="73"><h3 id="delineate-and-cross-tab">Delineate and Cross-Tab</h3>
 <p>Delineate the upstream contributing area from a point or area <em>and</em> cross-tabulate the resulting area with data sets for the area, e.g., landcover, topographic, and sub-surface characteristics.</p>
 <p>By default, return the delineation area (as a <code>GeoJSON</code> polygon) with cross-tabulated statistics included as properties.</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="74"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/delineation/delineate-crosstab</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/delineation/delineate-crosstab</div>
     </div>
 </div></div><div data-title="Cross-Tab (BYO Delineation)" class="keyline-top section contain clearfix " data-reactid="75"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="76"><h3 id="cross-tab-byo-delineation">Cross-Tab (BYO Delineation)</h3>
 <p>Bring your own area of interest (presumably representing a delineation you've created on your own, but really you can supply whatever area suits your fancy) and cross-tabulate it with data sets for the area, e.g., landcover, topographic, and sub-surface characteristics.</p>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="77"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/api/v0/delineation/crosstab</div>
+      <div class='pad0 code small endpoint-url'>http://api.3riverswetweather.org/rainways/v0/delineation/crosstab</div>
     </div>
 </div></div></div></div></div><div class="fixed-top space-left16" data-reactid="78"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="79"><div class="space-right1 small quiet inline" data-reactid="80">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="81"><a class="strong active" data-reactid="82">cURL</a><a class="strong " data-reactid="83">Python</a></div><div class="fr pad0" data-reactid="84"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="85"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="86"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 trww" data-reactid="87"></a><div class="strong small pad0
           

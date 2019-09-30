@@ -1,12 +1,14 @@
 ## Rainfall API
 
+*Note: This API is currently under development; headings and addresses below represent planned endpoints.*
+
 3 Rivers Wet Weather, with support from [Vieux Associates](http://www.vieuxinc.com/), uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data).
 
 The *3RWW Rainfall API* provides seamless access to current and *"historic"* rainfall data (older than 60 days from today) for the physical rain gauge data and calibrated pixel virtual rain gauge data (i.e., gauge-adjusted radar rainfall data, or *GARRD*).
 
-Data | Source | Description | Get
+<!-- Data | Source | Description | Get
 ---|---|---|---
-Rainfall | 3RWW & Vieux Associates | ... | Get it here!
+Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 
 ### Get Gauage Adjusted Radar Rainfall Data
 
@@ -15,7 +17,7 @@ Get rainfall totals for a point or area of interest, at a point in time or over 
 The data is by default returned as `JSON`. optionally return `GeoJSON`, a `CSV` table, or a `MD` (markdown) table.
 
 ```endpoint
-POST http://api.3riverswetweather.org/api/v0/rainfall/garrd
+POST http://api.3riverswetweather.org/rainfall/v2/pixel
 ```
 
 Property | Description
@@ -33,7 +35,7 @@ Property | Description
 Get physical rain gauge data. The data is returned as plain text, formated as `csv`.
 
 ```endpoint
-POST http://api.3riverswetweather.org/api/v0/rainfall/gauge
+POST http://api.3riverswetweather.org/rainfall/v2/raingauge
 ```
 
 Property | Description
