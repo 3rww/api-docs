@@ -2,9 +2,10 @@
 
 3 Rivers Wet Weather, with support from [Vieux Associates](http://www.vieuxinc.com/), uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data).
 
-The *Teragon Rainfall Dataset API 1.0* provides direct access to the *"historic"* rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.
+This API provides direct access to the *"historic"* rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.
 
-*Note: For a walk-through for using this API, see this [notebook on GitHub](https://github.com/3rww/notebooks/blob/master/rainfall/Getting%20Data%20(Teragon).ipynb) (or with [NBViewer](https://nbviewer.jupyter.org/github/3rww/notebooks/blob/master/rainfall/Getting%20Data%20%28Teragon%29.ipynb))*
+***NOTE:*** *this particular version of the API is intended to mimic the request and response formats of the legacy Teragon API; you'll see below that the URLs include "v1" in their path. This version of the API is maintained for backwards compatibility. For the latest version of the API, see the documentation for [Rainfall API](#rainfall-api).*
+
 
 ### Get Calibrated Radar Rainfall Data
 
@@ -28,7 +29,7 @@ In addition to rainfall values (as inches), each virtual gauge includes a metada
 Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.
 
 ```endpoint
-POST http://web.3riverswetweather.org/trp:API.pixel
+POST https://3rww-api.civicmapper.com/rainfall/v1/pixel
 ```
 
 Request Parameter | Description
@@ -47,7 +48,7 @@ Request Parameter | Description
 #### Example request
 
 ```curl
-curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d pixels="135,142;135,143;135,144" http://web.3riverswetweather.org/trp:API.pixel
+curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d pixels="135,142;135,143;135,144" https://3rww-api.civicmapper.com/rainfall/v1/pixel
 ```
 
 ```python
@@ -55,7 +56,7 @@ curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d st
 import requests
 
 response = requests.post(
-    "http://web.3riverswetweather.org/trp:API.pixel",
+    "https://3rww-api.civicmapper.com/rainfall/v1/pixel",
     data={
         "pixels": "135,142;135,143;135,144",
         "startmonth": 9,
@@ -106,7 +107,7 @@ Timestamp,135142,135142-src,135143,135143-src,135144,135144-src
 Get physical rain gauge data. The data is returned as plain text, formated as `csv` (MIME-type `text\csv`'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.
 
 ```endpoint
-POST http://web.3riverswetweather.org/trp:API.raingauge
+POST https://3rww-api.civicmapper.com/rainfall/v1/raingauge
 ```
 
 Request Parameter | Description
@@ -125,14 +126,14 @@ Request Parameter | Description
 #### Example request
 
 ```curl
-curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d gauges="1,2" http://web.3riverswetweather.org/trp:API.raingauge
+curl -d zeroﬁll=yes -d interval=Hourly -d startyear=2004 -d startmonth=9 -d startday=17 -d starthour=3 -d endyear=2004 -d endmonth=9 -d endday=18 -d endhour=0 -d gauges="1,2" https://3rww-api.civicmapper.com/rainfall/v1/raingauge
 ```
 
 ```python
 import requests
 
 requests.post(
-    "http://web.3riverswetweather.org/trp:API.raingauge",
+    "https://3rww-api.civicmapper.com/rainfall/v1/raingauge",
     data={
         "gauges": "1,2",
         "startmonth": 9,
