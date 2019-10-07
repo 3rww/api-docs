@@ -10,7 +10,7 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="1974349392"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Overview</div><a href="#3rww-rainways-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Rainways API</a><div class="small pad0x quiet space-top1" data-reactid="8">Data Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#rainfall-api-via-teragon" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Rainfall API (via Teragon)</a><a href="#terrain-api" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Terrain API</a><a href="#landcover-api" class="line-height15 pad0x pad00y quiet block " data-reactid="12">Landcover API</a><a href="#sub-surface-api" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Sub-Surface API</a><div class="small pad0x quiet space-top1" data-reactid="14">Analysis Resources</div><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Network Trace API</a><a href="#delineation-api" class="line-height15 pad0x pad00y quiet block " data-reactid="16">Delineation API</a></div></div><div class="space-left16" data-reactid="17"><div class="" data-reactid="18"><div class="clearfix" data-reactid="19"><div data-title="3RWW Rainways API" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h2 id="3rww-rainways-api">3RWW Rainways API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="-1029357712"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Overview</div><a href="#3rww-rainways-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">3RWW Rainways API</a><div class="small pad0x quiet space-top1" data-reactid="8">Data Resources</div><a href="#rainfall-api" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Rainfall API</a><a href="#rainfall-api-legacy" class="line-height15 pad0x pad00y quiet block " data-reactid="10">Rainfall API (legacy)</a><a href="#terrain-api" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Terrain API</a><a href="#landcover-api" class="line-height15 pad0x pad00y quiet block " data-reactid="12">Landcover API</a><a href="#sub-surface-api" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Sub-Surface API</a><div class="small pad0x quiet space-top1" data-reactid="14">Analysis Resources</div><a href="#network-trace-api" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Network Trace API</a><a href="#delineation-api" class="line-height15 pad0x pad00y quiet block " data-reactid="16">Delineation API</a></div></div><div class="space-left16" data-reactid="17"><div class="" data-reactid="18"><div class="clearfix" data-reactid="19"><div data-title="3RWW Rainways API" class="keyline-top section contain clearfix " data-reactid="20"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="21"><h2 id="3rww-rainways-api">3RWW Rainways API</h2>
 <p>The <em>3RWW Rainways API</em> provides a central location for documenting access to the data and processing resources from <a href="https://www.3riverswetweather.org">3 Rivers Wet Weather</a> and other organizations that are useful for sewer and stormwater modeling in Allegheny County, PA.</p>
 <p>The goal of the Rainways API is to provide a shortcut around a lot of the otherwise tedious work of downloading and prepping the environmental, infrastructure, and geophysical data used in sewer and stormwater modeling. It doesn't represent a new database or central repository, only a quicker and more direct way to access existing datastores that are relevant to this kind of work. To that end, it is designed to:</p>
 <ul>
@@ -180,12 +180,13 @@ Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>http://3rww-api.civicmapper.com/rainfall/v2/events</div>
     </div>
-</div></div><div data-title="Rainfall API (via Teragon)" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h2 id="rainfall-api-via-teragon">Rainfall API (via Teragon)</h2>
+</div></div><div data-title="Rainfall API (legacy)" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h2 id="rainfall-api-legacy">Rainfall API (legacy)</h2>
 <p>3 Rivers Wet Weather, with support from <a href="http://www.vieuxinc.com/">Vieux Associates</a>, uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's <a href="http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data">Calibrated Radar Rainfall website</a>.</p>
 <p>This API provides direct access to the <em>"historic"</em> rainfall data (older than 60 days from today) for the physical rain gauge and calibrated "pixel" virtual rain gauge data. There are two RPC calls that allow access to each respective dataset.</p>
 <p><strong><em>NOTE:</em></strong> <em>this particular version of the API is intended to mimic the request and response formats of the legacy Teragon API; you'll see below that the URLs include "v1" in their path. This version of the API is maintained for backwards compatibility. For the latest version of the API, see the documentation for <a href="#rainfall-api">Rainfall API</a>.</em></p>
 </div></div><div data-title="Get Calibrated Radar Rainfall Data" class="keyline-top section contain clearfix " data-reactid="35"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="36"><h3 id="get-calibrated-radar-rainfall-data">Get Calibrated Radar Rainfall Data</h3>
-<p>Get virtual rain gauge (gauge-adjusted / calibrated radar) data. </p>
+<p>Get virtual rain gauge (gauge-adjusted / calibrated radar) data for <em>radar pixels</em>.  </p>
+<p>The pixels are 1 square kilometer grid cells covering Allegheny County. You can view them <a href="https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e">on a map</a> or <a href="http://data-3rww.opendata.arcgis.com/datasets/228b1584b89a45308ed4256c5bedd43d_1">download them</a> for use with geospatial analysis tools.</p>
 <p>The results are returned as plain text, formated as a <code>csv</code> table (MIME-type <code>text\csv</code>').</p>
 <p>In addition to rainfall values (as inches), each virtual gauge includes a metadata column which indicates the source for the data. This column includes the codes:</p>
 <table>
@@ -222,7 +223,7 @@ Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 </tr>
 </tbody>
 </table>
-<p>(Note that no metadata is provided for hourly or daily roll-ups, only 15-minute interval observations.)</p>
+<p>(Note that no metadata is provided for hourly or daily roll-ups, only for 15-minute interval observations.)</p>
 <p>Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.</p>
 <table>
 <thead>
@@ -234,7 +235,7 @@ Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 <tbody>
 <tr>
 <td><code>pixels</code></td>
-<td>semicolon-separated list of pixel tuples in the format "x,y" - for example: <code>"135,142;135,143;135,144"</code>. Please refer to the maps contained on the website to ﬁnd exact pixel coordinates.</td>
+<td>semicolon-separated list of pixel tuples in the format "x,y" - for example: <code>"135,142;135,143;135,144"</code>. Please refer to <a href="https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e">the map</a> to ﬁnd exact pixel coordinates.</td>
 </tr>
 <tr>
 <td><code>startyear</code></td>
@@ -304,7 +305,8 @@ Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 2004-09-17T22:00:00,0.2850,-,0.2360,-,0.2730,-
 2004-09-17T23:00:00,0.3220,-,0.3169,-,0.3249,-</pre>
 </div></div><div data-title="Get Rain Gauge Data" class="keyline-top section contain clearfix " data-reactid="38"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="39"><h3 id="get-rain-gauge-data-1">Get Rain Gauge Data</h3>
-<p>Get physical rain gauge data. The data is returned as plain text, formated as <code>csv</code> (MIME-type <code>text\csv</code>'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.</p>
+<p>Get rain gauge data from 3RWW's physical gauges. You can view them <a href="https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e">on a map</a> or <a href="http://data-3rww.opendata.arcgis.com/datasets/4d647926b7e04354902e870bb90bbb65_0">download them</a> for use with geospatial analysis tools.</p>
+<p>The data is returned as plain text, formated as <code>csv</code> (MIME-type <code>text\csv</code>'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.</p>
 <table>
 <thead>
 <tr>
@@ -315,7 +317,7 @@ Rainfall | 3RWW & Vieux Associates | ... | Get it here! -->
 <tbody>
 <tr>
 <td><code>gauges</code></td>
-<td>comma-separated list of gauge numbers in the range [1-34]. Please refer to the maps contained on the website to ﬁnd gauge IDs.</td>
+<td>comma-separated list of gauge numbers in the range [1-34]. Please refer to <a href="https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e">the map</a> to ﬁnd gauge IDs.</td>
 </tr>
 <tr>
 <td><code>startyear</code></td>

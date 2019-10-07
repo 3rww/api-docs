@@ -1,4 +1,4 @@
-## Rainfall API (via Teragon)
+## Rainfall API (legacy)
 
 3 Rivers Wet Weather, with support from [Vieux Associates](http://www.vieuxinc.com/), uses calibrated data from the NEXRAD radar located in Moon Township, PA with rain gauge measurements collected during the same time period and rain event for every square kilometer in Allegheny County. The resulting rainfall data is equivalent in accuracy to having 2,276 rain gauges placed across the County. 3RWW has a massive repository of this high resolution spatiotemporal calibrated radar rainfall data for Allegheny County dating back to 2000 and including nearly 2 billion data points. This data is explorable on 3RWW's [Calibrated Radar Rainfall website](http://www.3riverswetweather.org/municipalities/calibrated-radar-rainfall-data).
 
@@ -9,7 +9,9 @@ This API provides direct access to the *"historic"* rainfall data (older than 60
 
 ### Get Calibrated Radar Rainfall Data
 
-Get virtual rain gauge (gauge-adjusted / calibrated radar) data. 
+Get virtual rain gauge (gauge-adjusted / calibrated radar) data for *radar pixels*.  
+
+The pixels are 1 square kilometer grid cells covering Allegheny County. You can view them [on a map](https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e) or [download them](http://data-3rww.opendata.arcgis.com/datasets/228b1584b89a45308ed4256c5bedd43d_1) for use with geospatial analysis tools.
 
 The results are returned as plain text, formated as a `csv` table (MIME-type `text\csv`').
 
@@ -24,7 +26,7 @@ In addition to rainfall values (as inches), each virtual gauge includes a metada
 |G-3|Derived from inverse distance squared weighting based on three rain gauges|
 |N/D|No data was collected for this data point. This may be because no data was collected at the time or the pixel may be outside of the data collection boundary.|
 
-(Note that no metadata is provided for hourly or daily roll-ups, only 15-minute interval observations.)
+(Note that no metadata is provided for hourly or daily roll-ups, only for 15-minute interval observations.)
 
 Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.
 
@@ -34,7 +36,7 @@ POST https://3rww-api.civicmapper.com/rainfall/v1/pixel
 
 Request Parameter | Description
 ---|---
-`pixels` | semicolon-separated list of pixel tuples in the format "x,y" - for example: `"135,142;135,143;135,144"`. Please refer to the maps contained on the website to ﬁnd exact pixel coordinates.
+`pixels` | semicolon-separated list of pixel tuples in the format "x,y" - for example: `"135,142;135,143;135,144"`. Please refer to [the map](https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e) to ﬁnd exact pixel coordinates.
 `startyear` | numerical quantity in the range [2000-2030]
 `startmonth` | numerical quantity in the range [1-12]
 `startday` | numerical quantity in the range [1-31]
@@ -104,7 +106,9 @@ Timestamp,135142,135142-src,135143,135143-src,135144,135144-src
 
 ### Get Rain Gauge Data
 
-Get physical rain gauge data. The data is returned as plain text, formated as `csv` (MIME-type `text\csv`'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.
+Get rain gauge data from 3RWW's physical gauges. You can view them [on a map](https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e) or [download them](http://data-3rww.opendata.arcgis.com/datasets/4d647926b7e04354902e870bb90bbb65_0) for use with geospatial analysis tools.
+
+The data is returned as plain text, formated as `csv` (MIME-type `text\csv`'). Dates and times are returned using in the ISO-8601 standard timstamp format with a timezone offset for local time.
 
 ```endpoint
 POST https://3rww-api.civicmapper.com/rainfall/v1/raingauge
@@ -112,7 +116,7 @@ POST https://3rww-api.civicmapper.com/rainfall/v1/raingauge
 
 Request Parameter | Description
 ---|---
-`gauges` | comma-separated list of gauge numbers in the range [1-34]. Please refer to the maps contained on the website to ﬁnd gauge IDs.
+`gauges` | comma-separated list of gauge numbers in the range [1-34]. Please refer to [the map](https://3rww.maps.arcgis.com/apps/View/index.html?appid=882e7844576b4f55ba55dda8646f607e) to ﬁnd gauge IDs.
 `startyear` | numerical quantity in the range [2000-2030]
 `startmonth` | numerical quantity in the range [1-12]
 `startday` | numerical quantity in the range [1-31]
